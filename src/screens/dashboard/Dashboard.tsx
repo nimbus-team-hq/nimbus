@@ -29,7 +29,7 @@ export function Dashboard() {
           <Button variant="secondary" size="sm">
             Export CSV
           </Button>
-          <Button size="sm">New report</Button>
+          <Button size="lg">New report</Button>
         </div>
       </header>
 
