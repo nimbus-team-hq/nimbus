@@ -96,7 +96,14 @@ function checkSegment(words, dir) {
   if (['bash', 'sh', 'zsh'].includes(exe) && w.includes('-c')) return analyze(w[w.indexOf('-c') + 1] ?? '', dir)
   if (exe === 'eval') return analyze(w.slice(1).join(' '), dir)
   if (exe === 'gh') {
-    if (w[1] === 'pr' && w[2] === 'merge') return RULES.merge
+    // gh takes flags before the subcommand (`gh -R owner/repo pr merge 1`), so match the positional words.
+    // Found by the agent's own guard test on 09.11: `gh -R … pr merge` used to pass.
+    const pos = []
+    for (let i = 1; i < w.length; i++) {
+      if (w[i] === '-R' || w[i] === '--repo') { i++; continue }
+      if (!w[i].startsWith('-')) pos.push(w[i])
+    }
+    if (pos[0] === 'pr' && pos[1] === 'merge') return RULES.merge
     if (w[1] === 'api' && w.some((x) => /\/pulls\/\d+\/merge\b/.test(x) || /mergePullRequest|enablePullRequestAutoMerge/.test(x))) return RULES.merge
     return null
   }
