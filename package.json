@@ -8,7 +8,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "oxlint --deny-warnings --format default src",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "check": "npm run lint && npm run typecheck && npm run build",
+    "verify:clone": "bash scripts/verify-fresh-clone.sh"
   },
   "dependencies": {
     "react": "18.3.1",

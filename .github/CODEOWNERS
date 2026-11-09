@@ -1,0 +1,4 @@
+# Code owners: GitHub requests their review on every PR, and the ruleset on main requires their approval to merge.
+# The owner is the client's engineering team, not a person, so the rule keeps working when people change.
+# Designers and the agent are not in this team: they open PRs, they don't approve them.
+* @nimbus-team-hq/engineers
