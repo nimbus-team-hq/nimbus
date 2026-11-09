@@ -1,13 +1,15 @@
-## What was done
-<!-- 1–3 sentences: which task this PR closes -->
+## What changed
+<!-- One task. 1–3 sentences: what the user now sees or can do, and which task this closes. -->
 
 ## Screenshots
+<!-- Every screen this PR touches, same size before and after. Shared components or tokens changed? Add #/ui-kit. -->
 | Before | After |
 |--------|-------|
 |        |       |
 
-## Checks
-- [ ] Branch from a fresh `main`
-- [ ] One task, one PR
-- [ ] Styles only through `var(--…)` tokens
-- [ ] The build passes (green `build` check)
+## How it was checked
+- [ ] `npm run check` is green locally (lint, typecheck, build)
+- [ ] The `verify` check is green on this PR
+- [ ] Opened every changed screen in the browser
+- [ ] Branch from a fresh `main`, one task in this PR
+- [ ] Existing components and `var(--…)` tokens reused; no raw colors or sizes

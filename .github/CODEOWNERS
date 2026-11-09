@@ -1,0 +1,4 @@
+# Code owners: GitHub requests their review on every PR, and the ruleset on main requires their approval to merge.
+# @CLIENT_ENGINEER is a placeholder (the account does not exist yet). Replace it with the client engineer's GitHub
+# username or an @org/team before turning on "Require review from Code Owners" in the ruleset.
+* @CLIENT_ENGINEER
