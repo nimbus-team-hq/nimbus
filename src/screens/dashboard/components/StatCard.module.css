@@ -1,0 +1,23 @@
+.label {
+  font: var(--font-body-sm);
+  color: var(--color-text-muted);
+}
+
+.value {
+  margin: var(--space-1) 0;
+  font: var(--font-display);
+  font-variant-numeric: tabular-nums;
+}
+
+.up,
+.down {
+  font: var(--font-body-sm-semibold);
+}
+
+.up {
+  color: var(--color-success);
+}
+
+.down {
+  color: var(--color-danger);
+}
