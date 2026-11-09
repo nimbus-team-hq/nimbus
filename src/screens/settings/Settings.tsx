@@ -10,7 +10,12 @@ const team = [
 ];
 
 export function Settings() {
-  const [notify, setNotify] = useState({ orders: true, failures: true, digest: false });
+  const [notify, setNotify] = useState({
+    orders: true,
+    failures: true,
+    renewals: false,
+    digest: false,
+  });
 
   return (
     <div className={styles.page}>
@@ -28,6 +33,12 @@ export function Settings() {
           description="A push notification the moment a card is declined"
           checked={notify.failures}
           onChange={(v) => setNotify({ ...notify, failures: v })}
+        />
+        <SettingRow
+          label="Upcoming renewals"
+          description="An email 3 days before a customer's plan renews"
+          checked={notify.renewals}
+          onChange={(v) => setNotify({ ...notify, renewals: v })}
         />
         <SettingRow
           label="Weekly digest"
